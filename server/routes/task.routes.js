@@ -5,7 +5,7 @@ import {
     createTask,
     deleteTask,
     updateTask
-} from "../controllers/task.controllers";
+} from "../controllers/task.controllers.js";
 const router = Router();
 router.get("/task",getTasks)
 router.post("/task",createTask)
