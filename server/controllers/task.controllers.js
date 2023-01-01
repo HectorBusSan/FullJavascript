@@ -5,7 +5,8 @@ export const getTask=(req,res)=>{
     res.send("Obteniendo tarea");
 }
 export const createTask=(req,res)=>{
-    res.send("Creando tarea");
+    console.log(req.body);
+    res.send("creando...")
 }
 export const updateTask=(req,res)=>{
     res.send("Actualizando tarea");
