@@ -20,8 +20,13 @@ export const createTask=async(req,res)=>{
         title,description
     })
 }
-export const updateTask=(req,res)=>{
-    res.send("Actualizando tarea");
+export const updateTask= async(req,res)=>{
+    const [result]=await pool.query("Update task set ? where id=?", [
+        req.body,req.params.id
+    ]);
+    if(result.affectedRows===0) return res.status(404).json({message:"task not found"})
+    res.json(result);
+
 }
 export const deleteTask=async(req,res)=>{
     const [result]=await pool.query("Delete from task where id=?",req.params.id);
