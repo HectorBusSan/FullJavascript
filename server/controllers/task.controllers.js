@@ -8,9 +8,12 @@ export const getTask=(req,res)=>{
 }
 export const createTask=async(req,res)=>{
     const {title,description} = req.body;
-    const result = await pool.query("Insert into task(title,description) values (?,?)",[title,description])
+    const [result] = await pool.query("Insert into task(title,description) values (?,?)",[title,description])
     console.log(result)
-    res.send("creado tarea")
+    res.send({
+        id: result.insertId,
+        title,description
+    })
 }
 export const updateTask=(req,res)=>{
     res.send("Actualizando tarea");
