@@ -7,8 +7,9 @@ export const getTasks=async(req,res)=>{
 export const getTask=async(req,res)=>{
     const id=req.params.id;
     const [result] = await pool.query("Select * from task where id=?",id);
-    console.log(result);
-    res.json(result);
+    if(result.length===0) return res.status(404).json({message:"Task not found"})
+    console.log(result[0]);
+    res.json(result[0]);
 }
 export const createTask=async(req,res)=>{
     const {title,description} = req.body;
