@@ -23,7 +23,9 @@ export const createTask=async(req,res)=>{
 export const updateTask=(req,res)=>{
     res.send("Actualizando tarea");
 }
-export const deleteTask=(req,res)=>{
-    res.send("Eliminando tarea");
+export const deleteTask=async(req,res)=>{
+    const [result]=await pool.query("Delete from task where id=?",req.params.id);
+    console.log(result)
+    res.json(result);
 }
 
