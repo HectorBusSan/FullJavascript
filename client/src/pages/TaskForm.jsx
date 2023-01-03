@@ -3,7 +3,11 @@ import {Form,Formik} from "formik"
 function TaskForm() {
   return (
     <div>
-        <Formik>
+        <Formik
+        initialValues={{
+            title:"",
+            description:""
+        }}>
             <Form>
                 <label>Title</label>
                 <input type="text" name="title" placeholder='Title...'/>
