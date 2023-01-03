@@ -1,11 +1,13 @@
 import React from 'react'
-import {Formik} from "formik"
+import {Fomr,Formik} from "formik"
 function TaskForm() {
   return (
     <div>
-        <Formk>
+        <Formik>
+            <Form>
 
-        </Formk>
+            </Form>
+        </Formik>
     </div>
   )
 }
