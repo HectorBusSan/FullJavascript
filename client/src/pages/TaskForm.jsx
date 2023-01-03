@@ -7,15 +7,22 @@ function TaskForm() {
         initialValues={{
             title:"",
             description:""
+        }}
+        onSubmit={(values)=>{
+            console.log(values);
         }}>
-            <Form>
-                <label>Title</label>
-                <input type="text" name="title" placeholder='Title...'/>
-
-                <label>Description</label>
-                <textarea type="text" name="description" placeholder='Write a description...'></textarea>
-                <button>Save</button>
-            </Form>
+            {
+                ({handleChange, handleSubmit})=>(
+                    <Form on onSubmit={handleSubmit}>
+                        <label>Title</label>
+                        <input type="text" name="title" placeholder='Title...' onChange={handleChange}/>
+        
+                        <label>Description</label>
+                        <textarea type="text" name="description" placeholder='Write a description...' onChange={handleChange}></textarea>
+                        <button type='submit'>Save</button>
+                    </Form>       
+                )
+            }
         </Formik>
     </div>
   )
