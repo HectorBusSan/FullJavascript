@@ -1,8 +1,12 @@
 import React from 'react'
-
+import {Formik} from "formik"
 function TaskForm() {
   return (
-    <div>TaskForm</div>
+    <div>
+        <Formk>
+
+        </Formk>
+    </div>
   )
 }
 
