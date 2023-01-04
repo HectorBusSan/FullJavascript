@@ -7,3 +7,8 @@ export const getTasksRequest=async()=>{
 export const createTaskRequest=async(task)=>{
     await axios.post("http://localhost:4000/task",task)
 }
+export const deleteTaskRequest=async(id)=>{
+    await fetch(`http://localhost:4000/task/${id}`,{
+        method:"DELETE",
+    })
+}
