@@ -1,6 +1,8 @@
 import axios from "axios"
+
 export const getTasksRequest=async()=>{
-    await axios.get("http://localhost:4000/task")
+    const res=await fetch("http://localhost:4000/task")
+    return await res.json();
 }
 export const createTaskRequest=async(task)=>{
     await axios.post("http://localhost:4000/task",task)
