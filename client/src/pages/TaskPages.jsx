@@ -20,7 +20,7 @@ function TaskPages() {
       <h1>Task</h1>
       {
         tasks.map(task=>(
-          <TaskCard task={task}/>
+          <TaskCard task={task} key={task.id}/>
         ))
       }
     </div>
