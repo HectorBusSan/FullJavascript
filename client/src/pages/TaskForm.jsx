@@ -1,9 +1,11 @@
 import React from 'react'
 import {Form,Formik} from "formik"
 import { createTaskRequest } from '../api/task.api'
-import { TaskContextProvider } from '../context/taskContext'
+import { TaskContext } from '../context/taskContext'
 import { useContext } from 'react'
 function TaskForm() {
+const {text}=useContext(TaskContext)
+console.log(text)
   return (
     <div>
         <Formik

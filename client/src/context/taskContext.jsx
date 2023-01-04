@@ -1,11 +1,11 @@
 import { createContext } from "react";
 
-export const taskContext= createContext();
+export const TaskContext= createContext();
 
 export const TaskContextProvider=({children})=>{
     return(
-    <TaskContextProvider value={{text:"Hello"}}>
+    <TaskContext.Provider value={{text:"Hola"}}>
         {children}
-    </TaskContextProvider>
+    </TaskContext.Provider>
     )
 }
