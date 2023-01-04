@@ -1,9 +1,17 @@
-import React from 'react'
 import { useEffect } from 'react'
+import { getTasksRequest } from '../api/task.api.js'
 function TaskPages() {
   useEffect(()=>{
-    console.log(2task)
+
+    async function loadTasks(){
+      const response =await getTasksRequest();
+      console.log(response);
+    }
+
+    loadTasks();
+
   },[])
+  
   return (
     <div>
       <h1>Task</h1>
