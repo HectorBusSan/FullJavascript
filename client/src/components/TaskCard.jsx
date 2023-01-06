@@ -1,7 +1,7 @@
 import React from 'react'
-
+import { useTasks } from '../context/taskContext'
 function TaskCard({task}) {
-  
+  const {deleteTask}=useTasks();
 
   return (
     <div>
@@ -9,7 +9,7 @@ function TaskCard({task}) {
         <p>{task.description}</p>
         <span>{task.done===1?"✔️":"❌"}</span>
         <span>{task.createdAt}</span>
-        <button onClick={()=>{handlerDelete(task.id)}}>Delete</button>
+        <button onClick={()=>{deleteTask(task.id)}}>Delete</button>
         <button onClick={()=>{}}>Edit</button>
     </div>
   )

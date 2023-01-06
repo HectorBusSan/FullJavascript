@@ -17,7 +17,7 @@ export const TaskContextProvider=({children})=>{
         console.log(response);
       }
 
-      const handlerDelete=async(id)=>{
+      const deleteTask=async(id)=>{
         try {
           const response= await deleteTaskRequest(id);
           console.log(response);
@@ -27,7 +27,7 @@ export const TaskContextProvider=({children})=>{
       }
 
     return(
-    <TaskContext.Provider value={{tasks,loadTasks,handlerDelete}}>
+    <TaskContext.Provider value={{tasks,loadTasks,deleteTask}}>
         {children}
     </TaskContext.Provider>
     )
