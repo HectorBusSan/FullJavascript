@@ -21,6 +21,7 @@ export const TaskContextProvider=({children})=>{
         try {
           const response= await deleteTaskRequest(id);
           console.log(response);
+          loadTasks();
         } catch (error) {
           console.log(error);
         }
