@@ -5,28 +5,28 @@ import { useParams } from 'react-router-dom';
 
 function TaskForm() {
     const{createTask,getTask}=useTasks();
-    const [task, setTask] = useState(second)
+    const [task, setTask] = useState([])
     const params= useParams();
     useEffect(() => {
         const loadTask=async()=>{
             if(params.id){
                 const task=await getTask(params.id)
                 console.log(task)
+                setTask({
+                    title:task.title,
+                    description:task.description
+                });
             }
         }
         loadTask();
     }, [])
-    
   return (
     <div>
         <h1>{
             params.id?"Edit Task":"NewTask"
             }</h1>
         <Formik
-        initialValues={{
-            title:"",
-            description:""
-        }}
+        initialValues={task}
         onSubmit={async(values,actions)=>{
             createTask(values)
             actions.resetForm();
