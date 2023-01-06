@@ -19,7 +19,9 @@ export const TaskContextProvider=({children})=>{
         try {
           const response= await deleteTaskRequest(id);
           console.log(response);
-          loadTasks();
+          // loadTasks();
+          // seguna opción para mostrar lo eliminado
+          setTasks(tasks.filter(task=>task.id!=id));
         } catch (error) {
           console.log(error);
         }
