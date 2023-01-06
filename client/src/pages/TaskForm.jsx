@@ -4,7 +4,7 @@ import { useTasks } from '../context/TaskProvider';
 import { useParams } from 'react-router-dom';
 
 function TaskForm() {
-    const{createTask,getTask}=useTasks();
+    const{createTask,getTask,updateTask}=useTasks();
     const [task, setTask] = useState([])
     const params= useParams();
     useEffect(() => {
@@ -31,10 +31,10 @@ function TaskForm() {
         onSubmit={async(values,actions)=>{
             createTask(values)
             if(params.id){
-                console.log("Update")
+                await updateTask(params.id,values);
             }
             else{
-                createTask(values);
+                await createTask(values);
             }
             actions.resetForm();
         }}>
