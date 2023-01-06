@@ -27,8 +27,15 @@ function TaskForm() {
             }</h1>
         <Formik
         initialValues={task}
+        enableReinitialize={true}
         onSubmit={async(values,actions)=>{
             createTask(values)
+            if(params.id){
+                console.log("Update")
+            }
+            else{
+                createTask(values);
+            }
             actions.resetForm();
         }}>
             {
