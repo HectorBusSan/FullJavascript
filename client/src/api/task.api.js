@@ -5,7 +5,12 @@ export const getTasksRequest=async()=>{
     return await res.json();
 }
 export const createTaskRequest=async(task)=>{
-    await axios.post("http://localhost:4000/task",task)
+    const res=await fetch("http://localhost:4000/task",
+    {method:"POST",
+    headers:{Accept:"application/json","Content-Type":"application/json"},
+    body:JSON.stringify(task)
+    })
+    return await res.json();
 }
 export const deleteTaskRequest=async(id)=>{
     await fetch(`http://localhost:4000/task/${id}`,{
