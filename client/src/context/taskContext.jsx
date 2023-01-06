@@ -16,6 +16,16 @@ export const TaskContextProvider=({children})=>{
         setTasks(response);
         console.log(response);
       }
+
+      const handlerDelete=async(id)=>{
+        try {
+          const response= await deleteTaskRequest(id);
+          console.log(response);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      
     return(
     <TaskContext.Provider value={{tasks,loadTasks}}>
         {children}

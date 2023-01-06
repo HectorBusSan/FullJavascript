@@ -1,14 +1,9 @@
 import React from 'react'
 import { deleteTaskRequest } from '../api/task.api'
+import { useTasks } from '../context/taskContext';
+
 function TaskCard({task}) {
-  const handlerDelete=async(id)=>{
-    try {
-      const response= await deleteTaskRequest(id);
-      console.log(response);
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  
 
   return (
     <div>
