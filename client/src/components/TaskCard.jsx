@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTasks } from '../context/taskContext'
+import { useTasks } from '../context/TaskProvider'
 function TaskCard({task}) {
   const {deleteTask}=useTasks();
 

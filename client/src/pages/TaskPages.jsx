@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import TaskCard from '../components/TaskCard.jsx';
-import { useTasks } from '../context/taskContext.jsx';
+import { useTasks } from '../context/TaskProvider.jsx';
 function TaskPages() {
 const {tasks,loadTasks}=useTasks();
 
