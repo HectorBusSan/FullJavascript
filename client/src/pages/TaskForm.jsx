@@ -41,10 +41,11 @@ function TaskForm() {
             else{
                 await createTask(values);
             }
+            actions.resetForm(); 
             setTask({
                 title:"",
                 description:""
-            })
+            });
         }}>
             {
                 ({handleChange, handleSubmit, values, isSubmitting})=>(
