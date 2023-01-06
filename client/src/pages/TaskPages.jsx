@@ -1,13 +1,11 @@
-import { useEffect,useState } from 'react'
-import { getTasksRequest } from '../api/task.api.js'
+import { useEffect } from 'react'
 import TaskCard from '../components/TaskCard.jsx';
 import { useTasks } from '../context/taskContext.jsx';
 function TaskPages() {
-const {tasks}=useTasks();
+const {tasks,loadTasks}=useTasks();
 
   useEffect(() => {  
-    
-    LoadTasks();
+    loadTasks();
   },[])
   
   function renderMain(){
