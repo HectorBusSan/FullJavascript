@@ -11,7 +11,7 @@ export const  useTasks=()=>{
 export const TaskContextProvider=({children})=>{
     const [tasks, setTasks] = useState([]);
     return(
-    <TaskContext.Provider value={{tasks:tasks}}>
+    <TaskContext.Provider value={{tasks}}>
         {children}
     </TaskContext.Provider>
     )
