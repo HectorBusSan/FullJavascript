@@ -1,5 +1,5 @@
 import { useContext,useState } from "react";
-import { getTasksRequest,deleteTaskRequest } from "../api/task.api";
+import { getTasksRequest,deleteTaskRequest,createTaskRequest } from "../api/task.api";
 import { TaskContext } from "./taskContext";
 export const  useTasks=()=>{
     const context=useContext(TaskContext)
@@ -27,8 +27,18 @@ export const TaskContextProvider=({children})=>{
         }
       }
 
+      const createTask=async(task)=>{
+        try{
+          await createTaskRequest(task);
+          console.log(task);
+
+        }catch(err){
+          console.log(err);
+        }
+      }
+
     return(
-    <TaskContext.Provider value={{tasks,loadTasks,deleteTask}}>
+    <TaskContext.Provider value={{tasks,loadTasks,deleteTask,createTask}}>
         {children}
     </TaskContext.Provider>
     )
