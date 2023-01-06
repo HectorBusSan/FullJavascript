@@ -4,8 +4,8 @@ import { createTaskRequest } from '../api/task.api'
 import { TaskContext } from '../context/taskContext'
 import { useContext } from 'react'
 function TaskForm() {
-const {text}=useContext(TaskContext)
-console.log(text)
+const {text,x,y}=useContext(TaskContext)
+console.log(text,x,y)
   return (
     <div>
         <Formik
