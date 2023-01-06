@@ -5,7 +5,10 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 function TaskForm() {
     const{createTask,getTask,updateTask}=useTasks();
-    const [task, setTask] = useState([])
+    const [task, setTask] = useState({
+        title:"",
+        description:""
+    })
     const params= useParams();
     const navigate=useNavigate();
     useEffect(() => {
@@ -30,7 +33,7 @@ function TaskForm() {
         initialValues={task}
         enableReinitialize={true}
         onSubmit={async(values,actions)=>{
-            console.log("-",values);
+            // console.log("-",values);
             if(params.id){
                 await updateTask(params.id,values);
                 navigate("/");
@@ -45,7 +48,7 @@ function TaskForm() {
         }}>
             {
                 ({handleChange, handleSubmit, values, isSubmitting})=>(
-                    <Form on onSubmit={handleSubmit}>
+                    <Form onSubmit={handleSubmit}>
                         <label>Title</label>
                         <input type="text" name="title" placeholder='Title...' onChange={handleChange}
                         value={values.title}/>
