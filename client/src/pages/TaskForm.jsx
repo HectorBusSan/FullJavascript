@@ -1,13 +1,22 @@
-import React from 'react'
+import {useEffect} from 'react'
 import {Form,Formik} from "formik"
 import { useTasks } from '../context/TaskProvider';
 import { useParams } from 'react-router-dom';
 
 function TaskForm() {
     const{createTask}=useTasks();
-    useParams();
+    const params= useParams();
+    useEffect(() => {
+        if(params.id){
+            
+        }
+    }, [])
+    
   return (
     <div>
+        <h1>{
+            params.id?"Edit Task":"NewTask"
+            }</h1>
         <Formik
         initialValues={{
             title:"",
