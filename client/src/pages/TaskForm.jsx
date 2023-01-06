@@ -1,15 +1,20 @@
-import {useEffect} from 'react'
+import {useEffect,useState} from 'react'
 import {Form,Formik} from "formik"
 import { useTasks } from '../context/TaskProvider';
 import { useParams } from 'react-router-dom';
 
 function TaskForm() {
-    const{createTask}=useTasks();
+    const{createTask,getTask}=useTasks();
+    const [task, setTask] = useState(second)
     const params= useParams();
     useEffect(() => {
-        if(params.id){
-            
+        const loadTask=async()=>{
+            if(params.id){
+                const task=await getTask(params.id)
+                console.log(task)
+            }
         }
+        loadTask();
     }, [])
     
   return (
