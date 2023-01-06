@@ -12,3 +12,7 @@ export const deleteTaskRequest=async(id)=>{
         method:"DELETE",
     })
 }
+export const getTaskRequest=async(id)=>{
+    const response=await fetch(`http://localhost:4000/task/${id}`);
+    return await response.json();
+}
