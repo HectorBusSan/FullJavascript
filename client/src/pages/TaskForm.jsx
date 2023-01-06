@@ -30,7 +30,7 @@ function TaskForm() {
         initialValues={task}
         enableReinitialize={true}
         onSubmit={async(values,actions)=>{
-            // createTask(values)
+            console.log("-",values);
             if(params.id){
                 await updateTask(params.id,values);
                 navigate("/");
