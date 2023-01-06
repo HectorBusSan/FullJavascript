@@ -45,6 +45,9 @@ export const TaskContextProvider=({children})=>{
           console.log(err);
         }
       }
+      const updateTask=async(id,newFields)=>{
+        
+      }
     return(
     <TaskContext.Provider value={{tasks,loadTasks,deleteTask,createTask,getTask}}>
         {children}
