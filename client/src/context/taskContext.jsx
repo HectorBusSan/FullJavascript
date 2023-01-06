@@ -1,5 +1,5 @@
 import { createContext,useContext,useState } from "react";
-import { getTasksRequest } from "../api/task.api";
+import { getTasksRequest,deleteTaskRequest } from "../api/task.api";
 
 export const TaskContext= createContext();
 
@@ -25,9 +25,9 @@ export const TaskContextProvider=({children})=>{
           console.log(error);
         }
       }
-      
+
     return(
-    <TaskContext.Provider value={{tasks,loadTasks}}>
+    <TaskContext.Provider value={{tasks,loadTasks,handlerDelete}}>
         {children}
     </TaskContext.Provider>
     )
