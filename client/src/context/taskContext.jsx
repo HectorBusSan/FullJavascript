@@ -9,6 +9,7 @@ export const  useTasks=()=>{
 }
 
 export const TaskContextProvider=({children})=>{
+    const [tasks, setTasks] = useState([]);
     return(
     <TaskContext.Provider value={{text:"Hola",x:1000,y:-1000}}>
         {children}

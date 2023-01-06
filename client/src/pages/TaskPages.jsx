@@ -3,7 +3,6 @@ import { getTasksRequest } from '../api/task.api.js'
 import TaskCard from '../components/TaskCard.jsx';
 function TaskPages() {
 
-  const [tasks, setTasks] = useState([]);
 
   useEffect(() => {  
     async function LoadTasks(){
