@@ -1,8 +1,6 @@
-import { createContext,useContext,useState } from "react";
+import { useContext,useState } from "react";
 import { getTasksRequest,deleteTaskRequest } from "../api/task.api";
-
-export const TaskContext= createContext();
-
+import { TaskContext } from "./taskContext";
 export const  useTasks=()=>{
     const context=useContext(TaskContext)
     if(!context) throw new Error("useTask must be used within a TaskContextProvider");
