@@ -7,8 +7,9 @@ import Navigation from "./components/Navigation"
 function App() {
   return (
     <div className="bg-zinc-900 h-screen">
-      <TaskContextProvider>
       <Navigation/>
+      <div className="container mx-auto p-4">
+      <TaskContextProvider>
         <Routes>
           <Route path="/" element={<TaskPages/>}/>
           <Route path="/new" element={<TaskForm/>}/>
@@ -16,6 +17,7 @@ function App() {
           <Route path="*" element={<NotFound/>}/>
         </Routes>
       </TaskContextProvider>
+      </div>
     </div>
   )
 }
