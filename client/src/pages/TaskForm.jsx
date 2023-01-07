@@ -33,11 +33,11 @@ function TaskForm() {
             // console.log("-",values);
             if(params.id){
                 await updateTask(params.id,values);
-                navigate("/");
             }
             else{
                 await createTask(values);
             }
+            navigate("/");
             actions.resetForm(); 
             setTask({
                 title:"",
