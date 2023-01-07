@@ -16,7 +16,7 @@ function TaskCard({task}) {
           </button>
         </header>
         <p className='text-xs'>{task.description}</p>
-        <span>{task.createdAt}</span>
+        <span className='m-y-4'>{task.createdAt}</span>
         <div className=' flex gap-x-3'>
           <button className='bg-red-500 px-2 py-1 text-white rounded' onClick={()=>{deleteTask(task.id)}}>Delete</button>
           <button className='bg-blue-500 px-2 py-1 text-white rounded' onClick={()=>{navigate(`/edit/${task.id}`)}}>Edit</button>
