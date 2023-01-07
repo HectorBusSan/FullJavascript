@@ -25,10 +25,7 @@ function TaskForm() {
         loadTask();
     }, [])
   return (
-    <div>
-        <h1>{
-            params.id?"Edit Task":"NewTask"
-            }</h1>
+    <div className='mx-auto'>
         <Formik
         initialValues={task}
         enableReinitialize={true}
@@ -49,15 +46,18 @@ function TaskForm() {
         }}>
             {
                 ({handleChange, handleSubmit, values, isSubmitting})=>(
-                    <Form onSubmit={handleSubmit}>
-                        <label>Title</label>
-                        <input type="text" name="title" placeholder='Title...' onChange={handleChange}
+                    <Form onSubmit={handleSubmit} className="bg-slate-300 max-w-md rounded p-4 mx-auto my-10">
+                        <h1 className='text-xl font-bold uppercase text-center'>{
+                            params.id?"Edit Task":"NewTask"
+                        }</h1>
+                        <label className='block'>Title</label>
+                        <input className='px-2 py-1 rounded-sm w-full' type="text" name="title" placeholder='Title...' onChange={handleChange}
                         value={values.title}/>
         
-                        <label>Description</label>
-                        <textarea type="text" name="description" placeholder='Write a description...' onChange={handleChange}
+                        <label className='block'>Description</label>
+                        <textarea className='px-2 py-1 rounded-sm w-full' type="text" name="description" placeholder='Write a description...' onChange={handleChange}
                         value={values.description}></textarea>
-                        <button type='submit' disabled={isSubmitting}>
+                        <button className='block bg-indigo-500 text-white px-2 py-1 rounded w-full hover:bg-indigo-700 duration-300' type='submit' disabled={isSubmitting}>
                             {isSubmitting?"Saving...":"Save"}
                         </button>
                     </Form>       
