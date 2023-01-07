@@ -6,15 +6,17 @@ import { TaskContextProvider } from "./context/TaskProvider"
 import Navigation from "./components/Navigation"
 function App() {
   return (
-    <TaskContextProvider>
-    <Navigation/>
-      <Routes>
-        <Route path="/" element={<TaskPages/>}/>
-        <Route path="/new" element={<TaskForm/>}/>
-        <Route path="/edit/:id" element={<TaskForm/>}/>
-        <Route path="*" element={<NotFound/>}/>
-      </Routes>
-    </TaskContextProvider>
+    <div className="bg-zinc-900 h-screen">
+      <TaskContextProvider>
+      <Navigation/>
+        <Routes>
+          <Route path="/" element={<TaskPages/>}/>
+          <Route path="/new" element={<TaskForm/>}/>
+          <Route path="/edit/:id" element={<TaskForm/>}/>
+          <Route path="*" element={<NotFound/>}/>
+        </Routes>
+      </TaskContextProvider>
+    </div>
   )
 }
 
