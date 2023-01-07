@@ -8,7 +8,7 @@ function TaskCard({task}) {
     await toggleTaskDone(task.id)
   }
   return (
-    <div>
+    <div className='bg-slate-300 p-4 rounded'>
         <h2>{task.title}</h2>
         <p>{task.description}</p>
         <button onClick={()=>{handlerDone()}}>

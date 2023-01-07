@@ -16,7 +16,7 @@ const {tasks,loadTasks}=useTasks();
   return (
     <div>
       <h1 className='text-6xl text-white font-bold text-center'>Task</h1>
-      <div className='grid grid-cols-3'>
+      <div className='grid grid-cols-3 gap-2'>
         {renderMain()}  
       </div>
     </div>
