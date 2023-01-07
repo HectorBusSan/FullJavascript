@@ -9,14 +9,18 @@ function TaskCard({task}) {
   }
   return (
     <div className='bg-slate-300 p-4 rounded'>
-        <h2>{task.title}</h2>
+        <header className='flex justify-between'>
+          <h2 className='text-sm font-bold'>{task.title}</h2>
+        </header>
         <p>{task.description}</p>
         <button onClick={()=>{handlerDone()}}>
           <span>{task.done===1?"✔️":"❌"}</span>
         </button>
         <span>{task.createdAt}</span>
-        <button onClick={()=>{deleteTask(task.id)}}>Delete</button>
-        <button onClick={()=>{navigate(`/edit/${task.id}`)}}>Edit</button>
+        <div>
+          <button onClick={()=>{deleteTask(task.id)}}>Delete</button>
+          <button onClick={()=>{navigate(`/edit/${task.id}`)}}>Edit</button>
+        </div>
     </div>
   )
 }
