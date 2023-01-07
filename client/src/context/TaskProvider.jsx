@@ -53,8 +53,15 @@ export const TaskContextProvider=({children})=>{
           console.log(err)
         }
       }
+      const toggleTaskDone=async(id)=>{
+        try{
+          await updateTaskRequest(id)
+        }catch(err){
+          
+        }
+      }
     return(
-    <TaskContext.Provider value={{tasks,loadTasks,deleteTask,createTask,getTask,updateTask}}>
+    <TaskContext.Provider value={{tasks,loadTasks,deleteTask,createTask,getTask,updateTask,toggleTaskDone}}>
         {children}
     </TaskContext.Provider>
     )
