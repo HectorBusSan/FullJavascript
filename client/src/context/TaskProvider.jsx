@@ -55,7 +55,9 @@ export const TaskContextProvider=({children})=>{
       }
       const toggleTaskDone=async(id)=>{
         try{
-          await updateTaskRequest(id)
+          const taskFound=tasks.find(task=>task.id===id)
+          await updateTaskRequest(id,taskFound.done===0?true:false);
+          console.log(taskFound);
         }catch(err){
           
         }
