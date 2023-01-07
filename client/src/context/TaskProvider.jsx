@@ -59,7 +59,7 @@ export const TaskContextProvider=({children})=>{
           await updateTaskRequest(id,taskFound.done===0?true:false);
           console.log(taskFound);
         }catch(err){
-          
+          console.log(err);
         }
       }
     return(

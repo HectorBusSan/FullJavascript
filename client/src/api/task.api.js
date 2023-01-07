@@ -29,11 +29,7 @@ export const updateTaskRequest=async(id,newTask)=>{
     })
     return res.json();
 }
-export const toggleTaskDoneRequest=async(id,done)=>{
-    const res= await fetch(`http://localhost:4000/task/${id}`,{
-        method:"PUT",
-        headers:{Accept:"application/json","Content-Type":"application/json"},
-        body:JSON.stringify(done)
-    })
-    return res.json();
-}
+export const toggleTaskDoneRequest=async(id,done)=>
+    await axios.put(`http://localhost:4000/task/${id}`, {
+    done,
+    });
