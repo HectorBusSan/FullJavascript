@@ -1,5 +1,5 @@
 import { useContext,useState } from "react";
-import { getTasksRequest,deleteTaskRequest,createTaskRequest, getTaskRequest, updateTaskRequest} from "../api/task.api";
+import { getTasksRequest,deleteTaskRequest,createTaskRequest, getTaskRequest, updateTaskRequest, toggleTaskDoneRequest} from "../api/task.api";
 import { TaskContext } from "./taskContext";
 export const  useTasks=()=>{
     const context=useContext(TaskContext)
@@ -56,10 +56,9 @@ export const TaskContextProvider=({children})=>{
       const toggleTaskDone=async(id)=>{
         try{
           const taskFound=tasks.find(task=>task.id===id)
-          await updateTaskRequest(id,taskFound.done===0?true:false);
-          console.log(taskFound);
-        }catch(err){
-          console.log(err);
+          await toggleTaskDoneRequest(id,taskFound.done===0?true:false);
+        }catch(error){
+          console.error(error);
         }
       }
     return(
